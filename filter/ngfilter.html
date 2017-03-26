@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>AngularJS ngFilter</title>
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js'></script>
+		<script type='text/javascript' src='appng.js'></script>
+	</head>
+	<body ng-app='app' ng-controller='TestCtrl as test'>
+		<input type='text' ng-model='search'/>
+		<h2>normal</h2>
+		<p ng-repeat='person in test.people | filter: search'>
+			{{ person.name }}
+			{{ person.born }}
+		</p>
+		<h2>orderBy</h2>
+		<p ng-repeat='person in test.people | orderBy: "name"'>
+			{{ person.name }}
+			{{ person.born }}
+		</p>
+		<h2>limit To</h2>
+		<p ng-repeat='person in test.people | limitTo: 2'>
+			{{ person.name }}
+			{{ person.born }}
+		</p>
+	</body>
+</html>
